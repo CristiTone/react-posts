@@ -8,6 +8,8 @@ function postsReducer(posts, action) {
   switch (action.type) {
     case 'set_posts':
       return action.payload;
+    case 'add_posts':
+      return [...posts, ...action.payload];
     default:
       throw Error(`Unkown action: ${action.type}!`);
   }
